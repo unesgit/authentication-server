@@ -1,0 +1,21 @@
+spring:
+    cloud:
+        ### to enable TLS at the config server, the configuration is defined in class com.gemalto.ics.rnd.ciams.security.CustomConfigServiceBootstrapConfiguration
+        ##, we have to set the value of spring.cloud.config.enabled to false
+        config:
+            enabled: false
+            fail-fast: true
+            name: authentication-server
+            uri: https://localhost:8888
+        #Config Vault Server
+        vault:
+            application-name: authentication-server
+            generic:
+                backend: ${VAULT_BACKEND}
+            host: ${VAULT_HOST}
+            port: ${VAULT_PORT}
+            scheme: ${VAULT_SCHEME}
+            ssl:
+                trust-store: ${VAULT_TRUST_STORE}
+                trust-store-password: ${VAULT_TRUST_STORE_PASSWORD}
+            token: ${VAULT_TOKEN}

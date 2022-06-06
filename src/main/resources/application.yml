@@ -1,0 +1,7 @@
+jwt:
+    token:
+      tokenExpirationTime: 86400000
+      key-store-path: file:///C:/corebanking/ssl/keystore/idmsKeystore_jwt.p12
+      key-store-alias: idms
+      key-store-password: gemalto
+      public-key-path: file:///C:/corebanking/ssl/keystore/idmsKeystore_jwt.crt

@@ -1,0 +1,39 @@
+authentication:
+    jwt:
+        activated: false
+hashmac:
+    encryption:
+        mac:
+            ## MAC Algorithm
+            algo: HMACSHA512
+        secretKey:
+            ## hashmac Secret Key Algorithm
+            algo: AES/CBC/PKCS5Padding
+idms:
+    actuator:
+        password: secret1
+        username: user1
+    #Cross Origin allowed domains.Use Comma based configuration for muliple domains
+    cors:
+        allowed-origins: https://localhost:8686,http://localhost:4200,https://localhost:4200,https://localhost:8087
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: flowable
+        platform: mysql
+        url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/idms
+        username: flowable
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        hibernate:
+            ddl-auto: create
+################## IDMS TECHNICAL EVENT #######################
+technicalEvent:
+    ## enable or disable the save of technical event
+    enabled: true
+    threadPool:
+        awaitTerminationSeconds: 30
+        ## Technical Event threadPool configuration
+        coreSize: 30
+        maxPoolSize: 50
+        queueCapacity: 100

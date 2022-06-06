@@ -1,0 +1,43 @@
+com:
+    sun:
+        jndi:
+            ldap:
+                object:
+                    disableEndpointIdentification: true
+cookie:
+    secure: true
+#Disabling eureka registration
+eureka:
+    client:
+        fetch-registry: false
+        register-with-eureka: false
+idms:
+    tls:
+        security:
+            file: ''
+javax:
+    net:
+        ssl:
+            trustStore: C:idmssslldapcertkeystoreidms
+            trustStorePassword: changeit
+ldap:
+    contextroot: ''
+    domain: idms.thai
+    port: 636
+    # the domain will be used in production environment
+    url: ldaps://10.87.105.254
+spring:
+    cloud:
+        config:
+            enabled: false
+            fail-fast: false
+            name: zuul-gateway
+        vault:
+            enabled: false
+############# Authentication properties ###################
+token:
+    refreshTokenExpTime: 4
+    tokenExpirationTime: 10
+    tokenIssuer: https://idms.thai
+    tokenName: IDMS-THAI-TOKEN
+    tokenSigningKey: xm8EV6Hy5RMFK4EEACIDAwQus
